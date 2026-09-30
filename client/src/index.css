@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Safety net: nothing in the app should ever cause page-level horizontal
+   scroll on mobile. Individual elements that legitimately need to scroll
+   sideways (filter chip rows, the booking stepper, tab bars) already use
+   their own `overflow-x-auto` container, so this only catches accidental
+   overflow (a stray fixed width, an unclamped badge, etc.) without hiding
+   anything intentional. */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  @apply bg-ink text-white;
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-volt-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background-color: #0e7c8633;
+}
