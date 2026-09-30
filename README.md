@@ -132,10 +132,7 @@ Demo accounts (all password `password123`):
 |---|---|
 | Customer (has 2 saved vehicles) | `demo.user@example.com` |
 | Vendor (approved) | `demo.vendor@example.com` |
-| Vendor (pending) | `pending.vendor@example.com` |
-| Vendor (rejected — edit the profile to see resubmission) | `rejected.vendor@example.com` |
-| Vendor (suspended) | `suspended.vendor@example.com` |
-| Admin | `admin@splashpoint.com` |
+
 
 ### Frontend
 ```bash
